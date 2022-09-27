@@ -34,7 +34,7 @@
     </header>
     <script>
         $.get('header.html', function (response) {
-            response = response.replace("${title-text}", "Toll Plaza");
+            response = response.replace("${title-text}", "Vehicle Classification");
             $('header').html(response);
             afterGetHeader();
         });
@@ -52,25 +52,11 @@
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Road Number</div>
+                                <div class="col-md-12 mb-2">Vehicle Classification</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
                                     <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
                                         class="form-control" placeholder="" value="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Direction</div>
-                                <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">ALL</option>
-                                        <option value="2">North</option>
-                                        <option value="6">South</option>
-                                        <option value="7">East</option>
-                                        <option value="8">West</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -82,8 +68,7 @@
                 <div class="card shadow-sm px-lg-5 w-100 mb-4 card-body position-relative">
                     <div class="d-flex justify-content-between mb-3">
                         <h5 class="card-title text-secondary">Inquire Result</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            onclick='$("#exampleModalLabel").text("Create")'>+
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick='$("#exampleModalLabel").text("Create")'>+
                             Create</button>
                     </div>
                     <div class=" overflow-auto">
@@ -91,22 +76,17 @@
                             <thead>
                                 <tr>
                                     <th style="width: 4rem;"></th>
-                                    <th>Road Number</th>
-                                    <th>Direction</th>
-                                    <th>Sequence No.</th>
-                                    <th>Gateway No.</th>
-                                    <th>Gateway Name</th>
+                                    <th>Code</th>
+                                    <th>Vehicle Classification</th>
+                                    <th>Remark</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Modify</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modify</button>
                                     </td>
-                                    <td>...</td>
-                                    <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
@@ -114,11 +94,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Modify</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Modify</button>
                                     </td>
-                                    <td>...</td>
-                                    <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
@@ -134,17 +111,17 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modify</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create Vehicle Classification</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body px-4">
                     <div class="row">
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Road Number</div>
+                                <div class="col-md-12 mb-2">Code</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
                                     <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
@@ -152,23 +129,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Direction</div>
-                                <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">ALL</option>
-                                        <option value="2">North</option>
-                                        <option value="6">South</option>
-                                        <option value="7">East</option>
-                                        <option value="8">West</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Sequence No.</div>
+                                <div class="col-md-12 mb-2">Vehicle Classification</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
                                     <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
@@ -176,27 +139,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-md-12 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Gateway No.</div>
+                                <div class="col-md-12 mb-2">Remark</div>
                                 <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
-                                        class="form-control" placeholder="" value="">
+                                    <textarea name="" id="" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Gateway Name</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
-                                        class="form-control" placeholder="" value="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-md-6 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Status</div>
                                 <div class="col-md-12">
@@ -234,9 +185,8 @@
                 });
             });
         }
-        , searching: false
-    });
-
+        ,searching: false
+    } );
     document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function (event) {
         // do something...
         $("#exampleModalLabel").text("Modify");

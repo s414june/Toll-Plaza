@@ -12,6 +12,7 @@
   --bs-primary: rgb(7, 14, 75);
   --bs-primary-rgb: 10, 17, 85;
   --bs-primary-light: rgb(23, 32, 117);
+  --menu-width: 270px;
 }
 a {
   text-decoration: none;
@@ -666,4 +667,22 @@ th {
 }
 #warning-table th {
   /* white-space: nowrap; */
+}
+
+#TableOutside {
+  width: calc(100vw - 500px);
+}
+#TableOutside.collapsed {
+  width: calc(100vw - 250px);
+}
+@media (max-width: 991px) {
+  #TableOutside {
+    width: calc(100vw - 120px);
+  }
+  #TableOutside.collapsed {
+    width: calc(100vw - 120px);
+  }
+}
+.row {
+  align-items: flex-end;
 }

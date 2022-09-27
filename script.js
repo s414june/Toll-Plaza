@@ -26,6 +26,7 @@ function collapseMenu() {
     $("#menu").addClass("collapsed");
     $(".menu-holder").addClass("collapsed");
     $(".hide-when-collapsed").removeClass("show").addClass("hide");
+    $("#TableOutside").addClass("collapsed");
 }
 
 function openCollapsedMenu() {
@@ -40,6 +41,7 @@ function openCollapsedMenu() {
         })
         $("#menu").removeClass("collapsed");
         $(".menu-holder").removeClass("collapsed");
+        $("#TableOutside").removeClass("collapsed");
     }
 }
 

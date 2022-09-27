@@ -34,7 +34,7 @@
     </header>
     <script>
         $.get('header.html', function (response) {
-            response = response.replace("${title-text}", "Toll Plaza");
+            response = response.replace("${title-text}", "Toll Rate History Inquiry");
             $('header').html(response);
             afterGetHeader();
         });
@@ -62,15 +62,10 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Direction</div>
+                                <div class="col-md-12 mb-2">Effective Date</div>
                                 <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">ALL</option>
-                                        <option value="2">North</option>
-                                        <option value="6">South</option>
-                                        <option value="7">East</option>
-                                        <option value="8">West</option>
-                                    </select>
+                                    <input type="datetime-local" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
@@ -82,45 +77,81 @@
                 <div class="card shadow-sm px-lg-5 w-100 mb-4 card-body position-relative">
                     <div class="d-flex justify-content-between mb-3">
                         <h5 class="card-title text-secondary">Inquire Result</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            onclick='$("#exampleModalLabel").text("Create")'>+
-                            Create</button>
+                        <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick='$("#exampleModalLabel").text("Create")'>+
+                            Create</button> -->
                     </div>
-                    <div class=" overflow-auto">
+                    <div class="overflow-auto position-relative" id="TableOutside">
                         <table id="dollarTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th style="width: 4rem;"></th>
                                     <th>Road Number</th>
                                     <th>Direction</th>
+                                    <th>Effective Date</th>
+                                    <th>Expiration Date</th>
+                                    <th>Toll Plaza Charge Setting</th>
+                                    <th>Direction</th>
                                     <th>Sequence No.</th>
-                                    <th>Gateway No.</th>
-                                    <th>Gateway Name</th>
-                                    <th>Status</th>
+                                    <th>Entrance-gateway No.</th>
+                                    <th>Entrance-gateway Name</th>
+                                    <th>Exit-gateway No.</th>
+                                    <th>Exit-gateway Name</th>
+                                    <th>Vehicle Type</th>
+                                    <th>Toll Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Modify</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                     </td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
+                                    <td>5</td>
+                                    <td>...</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                    <td>Mainline Toll Plaz</td>
+                                    <td>...</td>
+                                    <td>Mainline Toll Plaz</td>
                                     <td>...</td>
                                     <td>...</td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Modify</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                                     </td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
+                                    <td>10</td>
+                                    <td>...</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                    <td>Mainline Toll Plaz</td>
+                                    <td>...</td>
+                                    <td>Toll Plaza at Wang Noi Interchange</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                    </td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>10</td>
+                                    <td>...</td>
+                                    <td>1</td>
+                                    <td>...</td>
+                                    <td>Mainline Toll Plaz</td>
+                                    <td>...</td>
+                                    <td>Toll Plaza at Hin Kong Interchange</td>
                                     <td>...</td>
                                     <td>...</td>
                                 </tr>
@@ -134,10 +165,10 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modify</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body px-4">
@@ -147,7 +178,7 @@
                                 <div class="col-md-12 mb-2">Road Number</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
@@ -156,7 +187,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Direction</div>
                                 <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
+                                    <select disabled id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
                                         <option value="0">ALL</option>
                                         <option value="2">North</option>
                                         <option value="6">South</option>
@@ -168,42 +199,102 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Effective Date</div>
+                                <div class="col-md-12">
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="datetime-local" disabled  id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Expiration Date</div>
+                                <div class="col-md-12">
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="datetime-local" disabled  id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Toll Plaza Charge Setting</div>
+                                <div class="col-md-12">
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Sequence No.</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Gateway No.</div>
+                                <div class="col-md-12 mb-2">Entrance-gateway No.</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Gateway Name</div>
+                                <div class="col-md-12 mb-2">Entrance-gateway Name</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Status</div>
+                                <div class="col-md-12 mb-2">Exit-gateway No.</div>
                                 <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">Active</option>
-                                        <option value="0">Disable</option>
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Exit-gateway Name</div>
+                                <div class="col-md-12">
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="text" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Vehicle Type</div>
+                                <div class="col-md-12">
+                                    <select disabled id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
+                                        <option value="0">Compact Car</option>
+                                        <option value="0">Large Vehicle</option>
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 mb-2">Toll Amount</div>
+                                <div class="col-md-12">
+                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                    <input type="number" disabled id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                        class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
@@ -211,7 +302,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <!-- <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-success">Submit</button> -->
                 </div>
             </div>
         </div>
@@ -234,12 +326,12 @@
                 });
             });
         }
-        , searching: false
+        // ,responsive: true
+        ,searching: false
     });
-
     document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function (event) {
         // do something...
-        $("#exampleModalLabel").text("Modify");
+        $("#exampleModalLabel").text("Details");
     })
 </script>
 
