@@ -67,3 +67,7 @@ $(window).scroll(() => {
         }
     }
 })
+
+function query(){
+    
+}
