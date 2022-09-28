@@ -55,7 +55,7 @@
                                 <div class="col-md-12 mb-2">Vehicle Classification</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Create Vehicle Classification</h5>
@@ -119,27 +119,27 @@
                 </div>
                 <div class="modal-body px-4">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Code</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Vehicle Classification</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" desc="員工代號"
+                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
                                         class="form-control" placeholder="" value="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Remark</div>
                                 <div class="col-md-12">
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Status</div>
                                 <div class="col-md-12">
@@ -192,5 +192,9 @@
         $("#exampleModalLabel").text("Modify");
     })
 </script>
-
+<style>
+    .row{
+        align-items: flex-start;
+    }
+</style>
 </html>
