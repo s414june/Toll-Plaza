@@ -466,7 +466,12 @@ div.dataTables_wrapper .row {
   }
   #account .dropdown-menu {
     left: initial !important;
+    right: initial !important;
     top: initial !important;
+  }
+  #account button{
+    justify-content: center;
+    width: 100%;
   }
   #logout-place {
     display: block;

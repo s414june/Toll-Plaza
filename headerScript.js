@@ -4,10 +4,13 @@ function afterGetHeader() {
     vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    let dropdownAccountEl = document.querySelector('#account .dropdown-toggle');
+    let dropdownAccount = new bootstrap.Dropdown(dropdownAccountEl);
 
     //預設menu開合(小裝置關)
     if ($(window).width() < 991) {
         collapseMenu();
+        $(dropdownAccountEl).attr("data-bs-toggle","");
     }
     $("#desktopMenuBtn").click((e) => {
         //如果在這裡阻止冒泡，會造成收合時按.menu-btn打不開，所以在打開狀態下才阻止冒泡
@@ -42,5 +45,15 @@ function afterGetHeader() {
     })
     $(".not-opening-url").click((e) => {
         alert("此項目尚未啟用！");
+    })
+
+    $(window).resize(() => {
+        dropdownAccount.hide();
+        if ($(window).width() < 991) {
+            $(dropdownAccountEl).attr("data-bs-toggle","");
+        }
+        else {
+            $(dropdownAccountEl).attr("data-bs-toggle","dropdown");
+        }
     })
 }
