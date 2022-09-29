@@ -94,7 +94,7 @@
                                     <th>Direction</th>
                                     <th>Effective Date</th>
                                     <th>Expiration Date</th>
-                                    <th>Toll Plaza Charge Setting</th>
+                                    <th  style="white-space: nowrap">Toll Plaza Charge Setting</th>
                                     <th>Direction</th>
                                     <th>Sequence No.</th>
                                     <th>Entrance-gateway No.</th>
@@ -170,25 +170,25 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modify</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body px-4">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                    <div class="row mb-4">
+                        <div class="col-lg-2 col-sm-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Road Number</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                    <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                        value="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-lg-2 col-sm-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Direction</div>
                                 <div class="col-md-12">
@@ -202,104 +202,241 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-lg-2  col-sm-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Effective Date</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="datetime-local" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                    <input type="datetime-local" name="QUERY_USER_ID" class="form-control"
+                                        placeholder="" value="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
+                        <div class="col-lg-2 col-sm-3 mb-3">
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-2">Expiration Date</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="datetime-local" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                    <input type="datetime-local" name="QUERY_USER_ID" class="form-control"
+                                        placeholder="" value="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Toll Plaza Charge Setting</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                    </div>
+                    <div class="row">
+                        <div class="col-12 bg-secondary text-white mb-3 d-flex justify-content-between align-items-center"
+                            style="border-radius:3px ;">
+                            <h6 class="my-2">Toll Plaza Charge Setting</h6>
+                            <div style="width:20px ;height:20px;border-radius: 50%;"
+                                class="bg-white text-success d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-plus fa-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="d-flex me-3 align-items-center" style="width: 25px;">
+                            <div style="width:20px;height:20px;border-radius: 50%;"
+                                class="bg-danger text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-minus fa-xs"></i>
+                            </div>
+                        </div>
+                        <div class="position-relative" style="width:calc(100% - 25px) ;">
+                            <div class="row position-relative">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Sequence No.</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Entrance-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Exit-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification1 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification2 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification3 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="7">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Sequence No.</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+
+                    </div>
+                    <div class="d-flex">
+                        <div class="d-flex me-3 align-items-center" style="width: 25px;">
+                            <div style="width:20px;height:20px;border-radius: 50%;"
+                                class="bg-danger text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-minus fa-xs"></i>
+                            </div>
+                        </div>
+                        <div class="position-relative" style="width:calc(100% - 25px) ;">
+                            <div class="row position-relative">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Sequence No.</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Entrance-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Exit-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Toll Plaza at Wang Noi Interchange">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification1 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="10">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification2 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification3 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="" value="20">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Entrance-gateway No.</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
-                                </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="d-flex me-3 align-items-center" style="width: 25px;">
+                            <div style="width:20px;height:20px;border-radius: 50%;"
+                                class="bg-danger text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-minus fa-xs"></i>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Entrance-gateway Name</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                        <div class="position-relative" style="width:calc(100% - 25px) ;">
+                            <div class="row position-relative">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Sequence No.</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Exit-gateway No.</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Entrance-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Mainline Toll Plaz">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Exit-gateway Name</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="text" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Exit-gateway</div>
+                                        <div class="col-md-12">
+                                            <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
+                                            <input type="text" name="QUERY_USER_ID" class="form-control" placeholder=""
+                                                value="Toll Plaza at Hin Kong Interchange">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Vehicle Type</div>
-                                <div class="col-md-12">
-                                    <select id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">Compact Car</option>
-                                        <option value="0">Large Vehicle</option>
-                                    </select>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification1 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="..." value="">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Toll Amount</div>
-                                <div class="col-md-12">
-                                    <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
-                                    <input type="number" id="QUERY_USER_ID" name="QUERY_USER_ID" 
-                                        class="form-control" placeholder="" value="">
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification2 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="..." value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-3 mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 mb-2">Vehicle Classification3 - Toll Amount</div>
+                                        <div class="col-md-12">
+                                            <input type="number" name="QUERY_USER_ID" class="form-control"
+                                                placeholder="..." value="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
