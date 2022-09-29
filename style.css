@@ -699,3 +699,6 @@ th {
 th {
   white-space: nowrap;
 }
+.modal-dialog{
+  margin: 10px auto;
+}
