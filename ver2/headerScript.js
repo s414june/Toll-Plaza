@@ -61,7 +61,7 @@ function afterGetHeader() {
     let isActive = false;
     accordionA.each((i,v)=>{
         let nowLoca = location.pathname.split("/").pop();
-        if(nowLoca=="") nowLoca = location.pathname.split("/")[location.pathname.split("/").length - 2];
+        if(!nowLoca.includes(".html")) nowLoca = location.pathname.split("/")[location.pathname.split("/").length - 2];
         if($(v).attr("href").includes(nowLoca)){
             $(v).parents(".accordion-item").addClass("active")
             isActive = true;
