@@ -59,7 +59,7 @@ function afterGetHeader() {
 
     let accordionA = $(".accordion-item.no-arrow a");
     accordionA.each((i,v)=>{
-        let nowLoca = location.pathname;
+        let nowLoca = location.pathname.split("/").pop();
         if($(v).attr("href").includes(nowLoca)){
             $(v).parents(".accordion-item").addClass("active")
         }
