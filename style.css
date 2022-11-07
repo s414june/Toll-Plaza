@@ -16,6 +16,7 @@
   --bs-dark: #343537;
   --menu-width: 270px;
   --bs-danger: #f35740;
+  --bs-danger-rgb: 243, 87, 64;
 }
 a {
   text-decoration: none;
@@ -765,7 +766,7 @@ th {
 .btn-success,
 .btn-success:hover,
 .btn-success:active,
-.btn-success:focus  {
+.btn-success:focus {
   background-color: #22c493;
   border-color: #22c493;
 }
@@ -773,7 +774,7 @@ th {
 .btn-danger,
 .btn-danger:hover,
 .btn-danger:active,
-.btn-danger:focus  {
+.btn-danger:focus {
   background-color: #f35740;
   border-color: #f35740;
 }
