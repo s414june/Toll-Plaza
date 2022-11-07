@@ -58,10 +58,17 @@ function afterGetHeader() {
     })
 
     let accordionA = $(".accordion-item.no-arrow a");
+    let isActive = false;
     accordionA.each((i,v)=>{
         let nowLoca = location.pathname.split("/").pop();
+        if(nowLoca=="") nowLoca = location.pathname.split("/")[location.pathname.split("/").length - 2];
         if($(v).attr("href").includes(nowLoca)){
             $(v).parents(".accordion-item").addClass("active")
+            isActive = true;
+            return false;
         }
     })
+    if(!isActive){
+        accordionA.parent().find("[href='./index.html']").parents(".accordion-item").addClass("active")
+    }
 }
