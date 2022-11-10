@@ -17,6 +17,16 @@
   --menu-width: 270px;
   --bs-danger: #f35740;
   --bs-danger-rgb: 243, 87, 648;
+  /* --bg-gradient:   linear-gradient(
+    135deg,
+    rgb(47, 80, 136) 30%,
+    rgb(159, 223, 248) 120%
+  ); */
+  --bg-gradient:   linear-gradient(
+    135deg,
+    rgb(85, 142, 196) 30%,
+    rgb(18, 63, 114) 120%
+  );
 }
 a {
   text-decoration: none;
@@ -25,15 +35,15 @@ a {
 #all-bg-image {
   width: 500px;
   height: 300px;
-  background-image: url(./images/background-image.png);
+  /* background-image: url(./images/background-image.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   position: fixed;
   right: 10px;
   bottom: 25px;
-  opacity: 0.15;
-  z-index: 1;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .card {
@@ -100,11 +110,7 @@ input[type='range']:active::-webkit-slider-thumb {
 }
 #menu {
   z-index: 5;
-  background: linear-gradient(
-    135deg,
-    rgb(39, 70, 124) 30%,
-    rgb(196, 147, 143) 120%
-  );
+  background: var(--bg-gradient);
   height: calc(var(--vh, 1vh) * 100);
   max-height: 100vh;
   position: fixed;
@@ -181,6 +187,7 @@ input[type='range']:active::-webkit-slider-thumb {
   overflow-y: auto;
   display: flex;
   flex-grow: 1;
+  overflow-x: hidden;
 }
 
 #menu-tree > div svg {
@@ -312,13 +319,13 @@ input[type='range']:active::-webkit-slider-thumb {
   border-right: none;
 }
 #menu .accordion-button:hover {
-  background-color: rgba(109, 142, 196, 0.5) !important;
+  background-color: rgba(153, 185, 238, 0.3) !important;
   filter: brightness(1.05);
   transform: scale(1.03) translateX(1.7%);
   transition: 0.5s;
 }
 #menu .active .accordion-button {
-  background-color: rgba(122, 158, 216, 0.2);
+  background-color: rgba(158, 191, 243, 0.2);
 }
 #menu .accordion-button:focus {
   border-color: rgb(255, 255, 255);
@@ -332,20 +339,15 @@ input[type='range']:active::-webkit-slider-thumb {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background: linear-gradient(to bottom, #b6bbd8, #fff);
+  background: linear-gradient(to bottom, #c7e3f3, #f3fbff);
   height: fit-content;
   min-height: calc(var(--vh, 1vh) * 100);
-  /* z-index: -2; */
 }
 #title > * {
   top: 0;
   left: 0;
   z-index: 4;
-  background: linear-gradient(
-    135deg,
-    rgb(39, 70, 124) 30%,
-    rgb(196, 147, 143) 120%
-  );
+  background: var(--bg-gradient);
 }
 /* .title-container {
   transform: translateX(-8px);
