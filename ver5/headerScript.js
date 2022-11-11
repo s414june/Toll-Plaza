@@ -72,5 +72,5 @@ function afterGetHeader() {
         accordionA.parent().find("[href='./index.html']").parents(".accordion-item").addClass("active")
     }
 
-    $("#system-main").append(`<div id="all-bg-image"></div>`);
+    // $("#system-main").append(`<div id="all-bg-image"></div>`);
 }
