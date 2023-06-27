@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toll Rate Management</title>
+    <title>การจัดการข้อมูลอัตราค่าธรรมเนียมผ่านทาง</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./font-awesome/css/all.min.css">
     <script src="js/popper.min.js"></script>
@@ -95,8 +95,8 @@
                     <div class="d-flex justify-content-between mb-3">
                         <h5 class="card-title text-secondary">ผลการค้นหา</h5>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        onclick='$("#exampleModalLabel").text("Import")'>+
-                        Import</button>
+                        onclick='$("#exampleModalLabel").text("นำเข้าข้อมูล")'>+
+                        นำเข้าข้อมูล</button>
                     </div>
                     <div class="overflow-auto position-relative" id="TableOutside">
                         <table id="dollarTable" class="table table-striped">
@@ -105,7 +105,7 @@
                                     <th>รหัสของรุ่นผลิตภัณฑ์</th>
                                     <th>โมเดล</th>
                                     <th>เลขที่ครั้งที่ผลิต</th>
-                                    <th>Price</th>
+                                    <th>ราคา</th>
                                     <th>วันที่นำเข้า</th>
                                 </tr>
                             </thead>
@@ -188,7 +188,7 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 mb-3">
                             <div class="row align-items-center">
-                                <div class="col-md-12 mb-2">Price</div>
+                                <div class="col-md-12 mb-2">ราคา</div>
                                 <div class="col-md-12">
                                     <input type="hidden" id="QUERY_SYS_TYPE" name="QUERY_SYS_TYPE">
                                     <input type="number" id="QUERY_USER_ID" name="QUERY_USER_ID" class="form-control"
@@ -236,6 +236,7 @@
         , searching: false
         ,language: {
             "lengthMenu": "แสดง _MENU_ รายการ",
+            "info":"แสดง _PAGE_ ถึง _PAGES_ จาก _PAGES_ รายการ",
             "paginate": {
                 "next": "ถัดไป",
                 "previous": "ก่อนหน้านี้"

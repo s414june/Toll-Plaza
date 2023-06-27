@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toll Rate Management</title>
+    <title>การจัดการข้อมูลอัตราค่าธรรมเนียมผ่านทาง</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./font-awesome/css/all.min.css">
     <script src="js/popper.min.js"></script>
@@ -103,7 +103,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">รายละเอียด</button>
                                     </td>
                                     <td>...</td>
                                     <td>...</td>
@@ -121,7 +121,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">รายละเอียด</button>
                                     </td>
                                     <td>...</td>
                                     <td>...</td>
@@ -139,7 +139,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">รายละเอียด</button>
                                     </td>
                                     <td>...</td>
                                     <td>...</td>
@@ -168,7 +168,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body px-4">
@@ -282,8 +282,8 @@
                                 <div class="col-md-12 mb-2">ประเภทรถ</div>
                                 <div class="col-md-12">
                                     <select disabled id="QUERY_TYPE" name="QUERY_TYPE" class="form-select">
-                                        <option value="0">Compact Car</option>
-                                        <option value="0">Large Vehicle</option>
+                                        <option value="0">รถยนต์นั่งขนาดเล็ก</option>
+                                        <option value="0">รถยนต์นั่งขนาดใหญ่</option>
                                     </select>
                                 </div>
                             </div>
@@ -330,6 +330,7 @@
         ,searching: false
         ,language: {
             "lengthMenu": "แสดง _MENU_ รายการ",
+            "info":"แสดง _PAGE_ ถึง _PAGES_ จาก _PAGES_ รายการ",
             "paginate": {
                 "next": "ถัดไป",
                 "previous": "ก่อนหน้านี้"
@@ -338,7 +339,7 @@
     });
     document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function (event) {
         // do something...
-        $("#exampleModalLabel").text("Details");
+        $("#exampleModalLabel").text("รายละเอียด");
     })
 </script>
 
